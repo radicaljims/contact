@@ -7,8 +7,128 @@
 \title {Contact Geometry}
 \maketitle
 
-% \centerline{\sc \large A Very Small Introduction}
+% \centerline{\sc \large A Very Small Introduction }
 \vspace{.5pc}
 \vspace{2pc}
+
+\section* {Section 0 - Motivation?}
+
+The Russian mathematican V.I. Arnold, one of the great geometers of the last
+century, is reputed to have said that ``Contact geometry is all of geometry''.
+
+What other motivation do we need? :)
+
+These notes and the accompanying presentation are an artifact of my trying to
+understand what \textsl{contact geometry} is, so forgive me for not having
+figured out how to explain it just yet (we are only in Section 0!).
+
+But I can say the subject is something like how it sounds: understanding how two
+(or more!) geometric objects touch, and the structure that arises from that.
+
+Tangent lines and planes will be central: when two spheres touch, for example,
+at the point of contact derivatives / tangent lines coincide. These tangent
+lines are examples of \textbf{contact structures}.
+
+We will try to understand how \textbf{contact geometry} is more concerned with
+\textbf{global} aspects of geometry, and how \textbf{locally} all contact
+structures look the same.
+
+To understand this we will develop a good bit of algebra! I hope we will find
+the geometric payoff worth it!
+
+\section* {Section 1 - Algebra}
+If calculus is in some sense about understanding nonlinear things (curves and
+surfaces) in terms of linear approximations (tangent lines and spaces) then it's
+not too surprising that linear algebra has a large role to play.
+
+We should remember from calculus that the derivative is linear - indeed it is a
+linear transformation of tangent spaces!
+
+It turns out once you have this initial vector space structure you can start
+unfolding even more:
+
+\begin{description}
+\item[$\cdot$ duality       ] The dual space $V^{*}$ to a given vector space $V$
+\item[$\cdot$ multilinearity] Generalize from linear to \textsl{multilinear} transformations 
+\end{description}
+
+Understanding something about multilinear functions defined on the dual space
+$V^{*}$ will be a central goal of these notes. These objects are called
+\textsl{k-forms} and will let us define families of lines and planes which form
+the basis for \textbf{contact structures}.
+
+We will also see how the pairing of vectors and k-forms define
+\textsl{invariants} that are independent of coordinates.
+
+Let's get started!
+
+\section* {1.1 - Co-vectors and the dual space}
+
+We are going to assume knowledge of (finite) dimensional vector spaces over
+$\mathbb{R}$ but repeat a few relevant definitions. We'll
+denote a typical example by $V$ but very shortly we'll turn to a discussion of
+tangent spaces like $T_{p}\mathbb{R}^{N}$.
+
+Such spaces have \textsl{bases}: linearly independent subsets which span the
+entire space. This means any element $v \in V$ can be written uniquely as the
+sum of elements in the basis. The vector space $\mathbb{R}^{N}$ has the standard basis $e_{i}$
+which are vectors with a $1$ in the i'th component and $0$ everywhere else.
+
+It is a fact that a linear transformation $T : V \to W$ of vector spaces maps a
+basis $v_{i}$ of $V$ to a basis $w_{j}$ of $W$.
+
+Elements of $V$, which we usually just call vectors, could more precisely be
+called \textsl{contravariant vectors}. Why? To distinguish them from
+\textsl{covariant vectors}.
+
+How is a covariant vector different from a contravariant vector? Covariant
+vectors live inside the \textbf{dual space} $V^{*}$. We are going to define that
+right now!
+
+\[ V^{*} = \{ \epsilon | \epsilon : V \to \mathbb{R} \} \]
+
+where the $\epsilon$'s are linear. So $V^{*}$ is the set of functions that map
+vectors in $V$ to real numbers in $\mathbb{R}$. In fact it turns out that
+$V^{*}$ is itself a vector space. So that's nice, it's like you pay for one
+vector space and get one free.
+
+Elements of $V^{*}$ are also called \textsl{linear forms} or \textsl{one-forms}.
+
+(We haven't talked about multilinearity yet but you already know some
+\textbf{fundamental} (\textsl{hint, hint}) examples of these!)
+
+How can we tell if a given vector is secretly a covariant vector living in some
+other vector space's dual space? It turns out that $V \cong (V^{*})^{*}$ so in a
+sense whether or not a vector is co- or contravariant is a matter of
+perspective.
+
+What does seem to be important is this: if $v \in V$ and $\epsilon \in V^{*}$
+then $\epsilon(v) \in \mathbb{R}$ is \textbf{invariant}. By that I mean it
+\textsl{does not depend} on which basis you may have used to write down $v$ or
+$\epsilon$ in. Coordinates don't matter.
+
+Oh I've gotten a bit ahead of myself: since $V^{*}$ is a vector space that means
+it has a basis. What does that look like? And are they related to bases for $V$?
+
+We can associate to each basis $v_{i}$ in $V$ a \textbf{dual basis}
+$\epsilon_{i}$ in $V^{*}$.
+
+How does $\epsilon_{i}$ act on $v_{i}$? Quite simply! Each $\epsilon_{i}$
+projects off the i'th component of the vector it acts on. If $V =
+\mathbb{R^{N}}$ so that $v_{i} = e_{i}$ then
+\begin{equation*}
+  \epsilon_{i}(e_{j}) = \begin{cases}
+    1 & i = j\\
+    0 & i \neq j
+  \end{cases}
+\end{equation*}
+
+and more generally:
+
+\begin{equation*}
+  \epsilon_{i}(v) = \epsilon_{i}(a_{1} * v_{1} + ... + a_{n} * v_{n}) = a_{1} * \epsilon_{i}(v_{1}) + ... + a_{n} * \epsilon_{i}(v_{n}) = a_{j} * \epsilon_{i}(v_{j}) = a_{i}
+\end{equation*}
+
+TODO: show that the $\epsilon_{i}$ are linearly independent and span $V^{*}$
 
 \end{document}
