@@ -1,33 +1,47 @@
 \documentclass{article}
 
-\usepackage{listings, amssymb, amsmath, tikz-cd}
+\usepackage{listings, amssymb, amsmath, tikz-cd, setspace}
+
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue}
+\usepackage{hypcap}
 
 \begin{document}
 
 \title {Contact Geometry}
 \maketitle
 
-% \centerline{\sc \large A Very Small Introduction }
-\vspace{.5pc}
-\vspace{2pc}
+\centerline{\sc \large A Very Small Introduction }
+% \vspace{.5pc}
+% \vspace{2pc}
+\onehalfspace
 
-\section* {Section 0 - Motivation?}
+\tableofcontents
 
-The Russian mathematican V.I. Arnold, one of the great geometers of the last
-century, is reputed to have said that ``Contact geometry is all of geometry''.
+\section { Motivation?}
 
-What other motivation do we need? :)
+\paragraph{``Contact geometry is all of geometry''} the Russian mathematican
+V.I. Arnold is reputed to have said.
+
+He was one of the greatest geometers of the last century, so what other
+motivation do we need? :)
 
 These notes and the accompanying presentation are an artifact of my trying to
 understand what \textsl{contact geometry} is, so forgive me for not having
-figured out how to explain it just yet (we are only in Section 0!).
+figured out how to explain it just yet (we are only in Section 1!).
 
 But I can say the subject is something like how it sounds: understanding how two
-(or more!) geometric objects touch, and the structure that arises from that.
+(or more!) geometric objects touch, and the structure that arises from their contact.
 
-Tangent lines and planes will be central: when two spheres touch, for example,
-at the point of contact derivatives / tangent lines coincide. These tangent
+Tangent lines and planes will be central. When two spheres touch, for example,
+then at the point of contact derivatives and tangent lines coincide. These tangent
 lines are examples of \textbf{contact structures}.
+
+Also the n-truncated Taylor expansion of a function $f$ is said to be \textsl{in
+  contact} with $f$.
+
+So if we aren't inclined to agree immediately with Arnold, perhaps we can nonethless see
+that the notion of \textsl{contact} isn't so foreign.
 
 We will try to understand how \textbf{contact geometry} is more concerned with
 \textbf{global} aspects of geometry, and how \textbf{locally} all contact
@@ -36,7 +50,8 @@ structures look the same.
 To understand this we will develop a good bit of algebra! I hope we will find
 the geometric payoff worth it!
 
-\section* {Section 1 - Algebra}
+\section {Algebra}
+
 If calculus is in some sense about understanding nonlinear things (curves and
 surfaces) in terms of linear approximations (tangent lines and spaces) then it's
 not too surprising that linear algebra has a large role to play.
@@ -62,7 +77,7 @@ We will also see how the pairing of vectors and k-forms define
 
 Let's get started!
 
-\section* {1.1 - Co-vectors and the dual space}
+\subsection {Co-vectors and the dual space}
 
 We are going to assume knowledge of (finite) dimensional vector spaces over
 $\mathbb{R}$ but repeat a few relevant definitions. We'll
