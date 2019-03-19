@@ -18,7 +18,17 @@
 
 \tableofcontents
 
+\newpage
+
+\textbf{Emphatic note}: none of the mathematical ideas here represent original work in
+either content or presentation! The main source for the material is McInerney
+\cite{mcinerney} but see the full list of references for other very nice resources.
+
+\newpage
+
 \section { Motivation?}
+
+\subsection {Roots}
 
 \paragraph{``Contact geometry is all of geometry''} the Russian mathematican
 V.I. Arnold is reputed to have said.
@@ -49,6 +59,41 @@ structures look the same.
 
 To understand this we will develop a good bit of algebra! I hope we will find
 the geometric payoff worth it!
+
+\subsection {The Destination}
+
+I want to give a very brief glimpse of what it is we're going to be defining and
+maybe eventually understanding.
+
+\subsubsection {Vector Fields}
+
+In our main text \cite{toponogov} one definition of a vector field (along a
+curve) on a surface $S$ is as the derivative $\frac{d}{dt}\gamma$ where $\gamma : I \in
+\mathbb{R} \to S$ is the image of a curve on the $u, v$ plane but I have got the
+types a bit wrong there.
+
+We are going to need (or at least \textsl{use}) a slightly more abstract
+defintion that says: a vector field on a surface M is a linear derivation on the
+set of smooth functions on M. This set is denoted $C^{\infty}(M, R)$.
+
+So a vector field has the type: $C^{\infty}(M, R) \to C^{\infty}(M, R)$.
+
+How does this relate to the earlier definition? And what does that definition of
+a vector field imply about the definition of a \textsl{tangent vector}?
+
+It implies a slightly different definition of that as well. It turns out that
+thanks to the idea of the \textsl{directional derivative} there's a one-to-one
+correspondence between tangent vectors and differential operators.
+
+We are going to lean in to that correspondence and \textsl{define} (because who
+will stop us?) tangent vectors to be linear functions from $C^{\infty}(M, R) \to
+\mathbb{R}$.
+
+\subsubsection {Integral Curves and Flows}
+
+\subsubsection {Differential Forms}
+
+\subsubsection {Contact}
 
 \section {Algebra}
 
@@ -145,5 +190,23 @@ and more generally:
 \end{equation*}
 
 TODO: show that the $\epsilon_{i}$ are linearly independent and span $V^{*}$
+
+\begin{thebibliography}{9}
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+  
+\bibitem{mcinerney} 
+Andrew McInerney
+\textit{First Steps in Differential Geometry: Riemannian, Contact, Symplectic}. 
+Springer-Verlag New York, 2013.
+
+\bibitem{toponogov} 
+Victor Andreevich Toponogov
+\textit{Differential Geometry of Curves and Surfaces: A Concise Guide}. 
+Birkhäuser, 2006
+\end{thebibliography}
+
+
 
 \end{document}
