@@ -191,6 +191,87 @@ and more generally:
 
 TODO: show that the $\epsilon_{i}$ are linearly independent and span $V^{*}$
 
+\subsection{Forms}
+
+A covector is the smallest example of what we will call a form: it is a 1-form.
+
+We know at least the following forms: $dx, dy, dz$ and we know how they act on
+vectors since we know they are the \textit{dual basies}.
+
+So given any vector $v \in \mathbb{R}^{3}$ we can write $v$ as a linear
+combination $xe_{1} + ye_{2} + ze_{3}$ and we have the following relationships:
+
+TODO: talk about how $e_{k} = \frac{\partial}{\partial k}$ and use that notation everywhere!
+
+\begin{align*}
+  dx (v) = dx (xe_{i} + ye_{2} + ze_{3}) = dx (xe_{1}) + dx (ye_{2}) + dz (ze_{3}) = x \\
+  dy (v) = dy (xe_{i} + ye_{2} + ze_{3}) = dy (xe_{1}) + dy (ye_{2}) + dz (ze_{3}) = y \\
+  dz (v) = dz (xe_{i} + ye_{2} + ze_{3}) = dz (xe_{1}) + dz (ye_{2}) + dz (ze_{3}) = z
+\end{align*}
+
+TODO: this is pretty bad notation:
+
+Which uses the fact that $di * \frac{\partial}{\partial j = \delta_{ij}}$ and
+the linearity of the $di$.
+
+You may have heard the term \textit{bilinear} form, which is a function that
+maps two arguments (vectors in our case) to a real number. Two examples are the
+first and second fundamental forms - these are also \textit{skew-symmetric}
+which is another important property of forms.
+
+So if a covector is a 1-form how do we get to (bilinear) 2-forms? 3-forms?
+n-forms?
+
+TODO: give some notation for the spaces of forms of various degree so we can
+write down the type of the exterior product
+
+We define an operation called the \textbf{exterior product} (or sometimes the
+\textit{wedge product}), which is denoted $\wedge$, and somehow turns two
+1-forms into a single 2-form.
+
+We do this by relying on the \textit{determinant} since that turns out to
+already be what we want: it \textit{is} an antisymmetric bilinear form!
+
+The recipe goes like this. We have two 1-forms that we will call $\alpha$ and
+$\beta$. We will thus need two vectors which we will call $a$ and $b$.
+
+We combine them into a $2 x 2$ matrix and then take the determinant:
+
+$
+\begin{vmatrix}
+  \alpha (a) & \alpha (b) \\
+  \beta  (a) & \beta  (b)
+\end{vmatrix}
+$
+
+So the 2-form $\gamma = \alpha \wedge \beta$ takes two vectors, applies the
+1-forms $\alpha$ and $\beta$, and takes the determinant.
+
+There is a nice geometric interpretation of the wedge product that I won't go
+into right now!
+
+But here's the TODO for this section:
+
+1. Talk about that geometric interpretation
+2. Do some concrete examples
+3. Talk about the space of 3-forms and what sort of basis it has
+4. Talk about integrating them, at least mention pullback!
+5. Talk about volume forms!
+
+\subsection {Differential Forms}
+
+These are to forms (or k-forms) as vector fields are to vector fields
+
+1. Do an example
+2. Talk about how they relate to Jacobians
+3. Give an example of a contact form that generates a volume form
+
+\section {Geometry}
+
+\subsection {Contact Elements}
+
+\section {Generalizations}
+
 \begin{thebibliography}{9}
 
 \phantomsection
