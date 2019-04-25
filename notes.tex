@@ -26,7 +26,153 @@ either content or presentation! The main sources for the material are McInerney
 
 \newpage
 
-\section { Motivation?}
+\section {Just The Facts}
+
+What I want to get across:
+
+What are the core ideas:
+
+* Fields of planes (actually fields of hyperplanes (co-dimension 1))
+* One-forms (and their kernels) can represent fields of planes
+* We also want a non-degeneracy / non-integrability condition on the contact
+form ($w \wedge dw \neq 0$)
+
+Where do you see these ideas:
+
+* A few places in physics: geometric optics (wavefronts), thermodynamics (the
+first law here can be written as a contact form?), classical mechanics (constant
+energy hypersurface of a mechanical system)
+* PDEs - the theory partly stems from Sophus Lie's work on ``contact transformations''
+* Tied up with Legendre transform (that switches between Lagrangian and
+Hamiltonian formulations of CM)
+* Hamiltonians are everywhere in the contact literature!
+* Big resurgence in the '80s thanks to VI Arnold (first place I ever heard of
+contact geometry was his book Mathematical Methods of Classical Mechanics!)
+* According to Arnold: ``Contact geometry is all of geometry''
+
+Examples of plane fields:
+
+* try to draw something, but probably just reference the picture everyone uses
+* talk about foliations / integral curves - we've seen a few of these,
+especially on geodesically complete surfaces
+* Frobenius integrability
+* but we don't want an integral surface and sadly I don't quite understand why
+
+Examples of differential forms:
+
+* Talk about covectors
+
+We've talked about at least three different forms in class: the first, second,
+and third fundamental forms.
+
+They are called \textit{forms} because they are functions that map vectors to a
+number.
+
+The fundamental forms are also \textit{bilinear}, but there are also simpler
+\textit{linear} forms. We will call these \textbf{one-forms}.
+
+If you've taken enough linear algebra you may recognize one-forms as living in
+the \textit{dual space} $\mathbb{V}^{*}$ associated to a vector space $\mathbb{V}$.
+
+If you've taken enough physics you may recognize these as \textit{covectors}.
+
+From a geometrical perspective a very important fact about covectors is that
+they have a natural pairing with vectors.
+
+If $v \in \mathbb{V}$ and $w \in \mathbb{V}^{*}$ then the number $w(v) \in
+\mathbb{R}$ is \textbf{invariant}: it does not depend on what basis $v$ or $w$
+may be expressed in.
+
+Said another way the pairing does not depend on coordinates!
+
+Avoiding coordinate representations as much as possible is a big goal of this
+formalism. Nonetheless I am about to introduce bases for both $\mathbb{V}$ and $\mathbb{V}^{*}$!
+
+For a given basis $e_{i}$ of $\mathbb{V}$ there is an associated basis $e^{j}$
+of $\mathbb{V}^{*}$ called the \textbf{dual basis}.
+
+The dual basis has the property that under the pairing we have $e^{j}(e_{i} = \delta^{j}_{i})$.
+
+That is the \textbf{Kronecker delta} which is $1$ when $i = j$ and $0$
+otherwise.
+
+If we then write a $v \in \mathbb{R}^{2}$ as $v = ae_{1} + be_{2}$ and apply the
+dual form $e^{1}$ we get $e^{1} (v) = e^{1}(ae_{1} + be_{2}) = e^{1}(ae_{1}) +
+  e^{1}(be_{2}) = a(e^{1}(e_{1})) + b(e^{1}(e_{2})) = a(1) + b(0) = a$
+
+Which shows that elements of the dual basis are projection operators.
+
+If we specialize to the context of differential geometry then our $\mathbb{V}$
+becomes a tangent plane or space, maybe $T_{p}\mathbb{R}^{3}$.
+
+The dual vector space $\mathbb{V}^{*}$ then becomes the \textbf{cotangent space}
+(TODO what's notation for this, do I still use T?).
+
+In class we're used to writing $\rho_{u}, \rho_{v}$ or maybe $r_{u}, r_{v}$ as a
+basis for the tanget space.
+
+In these notes we're going to try to use $\frac{\partial}{\partial x}, \frac{\partial}{\partial
+  y}$.
+
+For the cotangent space we'll use $dx, dy$.
+
+* One-forms, two-forms, three-forms
+
+Differential forms are grounded in \textit{multilinear} algebra, so we'll be
+interested in \textit{multilinear} functions. But a very specific kind of
+multilinear function - antisymmetric (or sometimes skew-symmetric) ones.
+
+We actually already know an antisymmetric multilinear function and that is the
+cross product!
+
+That's going to be handy because one way to motivate the idea of (not yet
+differential) forms is to try to generalize the cross product to higher
+dimensions.
+
+It turns out you can't, exactly, but you can get something even cooler: the
+\textbf{wedge} (or exterior) product.
+
+Why is it cooler? It exists for every dimension and it lets you build linear
+subspaces of arbitrary rank in the same way that a cross product kind of
+represents a plane.
+
+In fact the cross product of two vectors in $\mathbb{R}^{3}$
+is dual in a sense to the wedge product of two vectors. The cross product being
+the normal associated to the plane while the wedge product represents the subset
+of the plane spanned by the parallelogram formed by the vectors.
+
+That was a mouthful but the picture looks like this:
+
+TODO INSERT PICTURE
+
+* Organize these into the algebra of three-forms
+* Exterior derivative
+* Do a quick example of integrating them
+
+Examples of contact forms:
+
+* The ``standard'' example: $xdy + dz$
+* Maybe something in polar form
+* Talk about how contact forms don't *uniquely* determine plane fields
+* Talk about Darboux - every contact form ``locally'' looks the same but is
+globally different (reflected in Reeb flow?)
+
+Examples of contact structures:
+
+* line segments in the plane
+* planes in space
+* the mechanical example from that paper
+
+Examples of Reeb fields:
+
+* talk about flows a bit
+* talk about what characterizes the Reeb field / flow
+* re: Huygens, talk about how the Reeb flow is maybe light rays? And there's
+some relationship to geodesic flow
+* talk about how contact forms that generate the same plane fields may *not*
+generate the same Reeb fields (I think)
+
+\section {Motivation?}
 
 \subsection {Roots}
 
@@ -44,8 +190,8 @@ But I can say the subject is something like how it sounds: understanding how two
 (or more!) geometric objects touch, and the structure that arises from their contact.
 
 Tangent lines and planes will be central. When two spheres touch, for example,
-then at the point of contact derivatives and tangent lines coincide. These tangent
-lines are examples of \textbf{contact structures}.
+then at the point of contact derivatives and tangent planes coincide. These tangent
+planes are examples of \textbf{contact structures}.
 
 Also the n-truncated Taylor expansion of a function $f$ is said to be \textsl{in
   contact} with $f$.
@@ -268,7 +414,27 @@ These are to forms (or k-forms) as vector fields are to vector fields
 
 \section {Geometry}
 
+TODO: do I want to try to talk about integral curves / integrability?
+
+Oh I have a section on integral curves!
+
+If a vector field has integral curves it is integrable? But we have a field of
+planes so instead of an integral curve we have an integral surface, but actually
+we don't by the non-integrability condition (is that because we're a volume form
+really?)
+
+I should try to understand, so I can explain, why the non-integrability
+condition is interesting!
+
+Maybe talk about forms as actually ``sections'' of the cotangent bundle
+
+\subsection {Plane Fields}
+
+\subsection {Contact One-Forms}
+
 \subsection {Contact Elements}
+
+\subsection {Reeb Field}
 
 \section {Generalizations}
 
