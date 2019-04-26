@@ -82,55 +82,69 @@ Visualizing forms
 
 \section {Contact Elements}
 
-Let's work in the plane $\mathbb{R}^{2}$. Then a contact element is a point $p
+A contact element to a manifold is a hyperplane at a point of the manifold. For
+all of these notes and the presentation this manifold will be $\mathbb{R}^{2}$
+or $\mathbb{R}^{3}$ or subsets thereof.
+
+Let's work in the plane $\mathbb{R}^{2}$ for a moment. Then a contact element is a point $p
 \in \mathbb{R}^{2}$ and a non-vertical line-segment centered at $p$. We could
 call a collection of these at every point of $\mathbb{R}^{2}$ a field of line-segments.
 
-If we imagine a sequence of these points as being sampled from a regular curve, and the line-segments
-the associated tangents, then we can integrate the tangents to recover the curve.
+We need three parameters to describe this space, which we will denote
+$\mathbb{CR}^{2} = \{ (x, y, m) | x, y, m \in \mathbb{R} \}$.
 
-Continuing in this kind of reverse direction we might call the curve an
-\textit{integral curve}. We have seen such things a few times in class when
+The $(x, y)$ components correspond to the points in the plane and the $m$
+represents the slope of the line through that point.
+
+In a little bit we will be interested in picking out certain subsets of this
+space and spaces like this.
+
+(To visualize this one can imagine a pin-wheel of planar segments, orthogonal to
+$\mathbb{R}^{2}$, sitting in $\mathbb{R}^{3}$ ``above'' $\mathbb{R}^{2}$.)
+
+\subsection {Foliations and Integrability}
+
+If we imagine a sequence of points as being sampled from a regular curve, and the line-segments
+the associated tangents, then we could integrate the tangents to recover the curve.
+
+Usually we think of differentiating curves to get tangents, not integrating them
+to get curves! Continuing in this kind of reverse direction we might call the curve an
+\textit{integral curve}. I think we have seen such things a few times in class when
 talking about extending some local piece of a curve on a patch to the entire surface.
-
-Looking at the contact elements from a slightly different angle, we might
-consider the line-segments to be a vector field and then the question of
-integrating the field is the question of the existence of these integral curves.
 
 If we bump up a dimension and imagine a field of planes we are led to consider
 integrating those planes into an \textit{integral surface}.
 
 Integral curves and surfaces are examples of foliations. They decompose a space
-into a disjoint union of subspaces and seem pretty cool!
+into a disjoint union of subspaces and seem pretty cool! And they certainly seem
+like a cool thing to make with our contact elements!
 
 But here's the punch line - the fields of planes we talk about in contact
 geometry are \textbf{maximally} non-integrable!
+
+This non-integrability is ensured by a condition on the gadget we use to
+character our plane fields - the contact one form.
 
 \section {Differential Forms}
 
 Differential forms give us a way to talk about directed linear subspaces. In
 particular we can use a one-form (the so-called \textbf{contact one-form}) to
-characterize contact elements.
+characterize fields contact elements.
 
 \subsection{Covectors and the Dual Space}
 We've talked about at least three different forms in class: the first, second,
 and third fundamental forms.
 
 They are called \textit{forms} because they are functions that map vectors to a
-number.
-
-The fundamental forms are also \textit{bilinear}, but there are also simpler
+number. The fundamental forms are also \textit{bilinear}, but there are also simpler
 \textit{linear} forms. We will call these \textbf{one-forms}.
 
 If you've taken enough linear algebra you may recognize one-forms as living in
-the \textit{dual space} $\mathbb{V}^{*}$ associated to a vector space $\mathbb{V}$.
-
-If you've taken enough physics you may recognize these as \textit{covectors}.
+the \textit{dual space} $\mathbb{V}^{*}$ associated to a vector space
+$\mathbb{V}$. If you've taken enough physics you may recognize these as \textit{covectors}.
 
 From a geometrical perspective a very important fact about covectors is that
-they have a natural pairing with vectors.
-
-If $v \in \mathbb{V}$ and $w \in \mathbb{V}^{*}$ then the number $w(v) \in
+they have a natural pairing with vectors. If $v \in \mathbb{V}$ and $w \in \mathbb{V}^{*}$ then the number $w(v) \in
 \mathbb{R}$ is \textbf{invariant}: it does not depend on what basis $v$ or $w$
 may be expressed in.
 
@@ -142,30 +156,37 @@ formalism. Nonetheless I am about to introduce bases for both $\mathbb{V}$ and $
 For a given basis $e_{i}$ of $\mathbb{V}$ there is an associated basis $e^{j}$
 of $\mathbb{V}^{*}$ called the \textbf{dual basis}.
 
-The dual basis has the property that under the pairing we have $e^{j}(e_{i} = \delta^{j}_{i})$.
+The dual basis has the property that under the pairing we have $e^{j}(e_{i}) = \delta^{j}_{i}$.
 
 That is the \textbf{Kronecker delta} which is $1$ when $i = j$ and $0$
 otherwise.
 
 If we then write a $v \in \mathbb{R}^{2}$ as $v = ae_{1} + be_{2}$ and apply the
-dual form $e^{1}$ we get $e^{1} (v) = e^{1}(ae_{1} + be_{2}) = e^{1}(ae_{1}) +
-  e^{1}(be_{2}) = a(e^{1}(e_{1})) + b(e^{1}(e_{2})) = a(1) + b(0) = a$
+dual form $e^{1}$ we get:
 
-Which shows that elements of the dual basis are projection operators.
+\begin{align*}
+  e^{1} (v) = \\
+  e^{1}(ae_{1} + be_{2}) = \\
+  e^{1}(ae_{1}) + e^{1}(be_{2}) = \\
+  a(e^{1}(e_{1})) + b(e^{1}(e_{2})) = \\
+  a * 1 + b * 0 = \\
+  a
+\end{align*}
+
+This shows that elements of the dual basis are projection functions.
 
 If we specialize to the context of differential geometry then our $\mathbb{V}$
-becomes a tangent plane or space, maybe $T_{p}\mathbb{R}^{3}$.
+becomes a tangent plane or space, maybe $T_{p}\mathbb{R}^{3}$. The dual vector space $\mathbb{V}^{*}$ then becomes the \textbf{cotangent space}
+denoted $T_{p}^{*}\mathbb{R}^{3}$.
 
-The dual vector space $\mathbb{V}^{*}$ then becomes the \textbf{cotangent space}
-(TODO what's notation for this, do I still use T?).
+Remember these are just linear functions that
+map tangent vectors to real numbers!
 
 In class we're used to writing $\rho_{u}, \rho_{v}$ or maybe $r_{u}, r_{v}$ as a
 basis for the tanget space.
 
 In these notes we're going to try to use $\frac{\partial}{\partial x}, \frac{\partial}{\partial
-  y}$.
-
-For the cotangent space we'll use $dx, dy$.
+  y}, \frac{\partial}{\partial z}$ for the tangent space and $dx, dy, dz$ for the cotangent space.
 
 \subsection{One-forms, Two-forms, Three-forms}
 
@@ -280,18 +301,19 @@ the curious effect of bumping up the degree of a k-form. So the derivative of a
 zero-form is a one-form, of a one-form is a two-form, and so on.
 
 Oh did I talk about zero-forms before? Then now's a good time to say that a
-zero-form is just a function $f : \mathbb{R} \to \mathbb{R}$.
+zero-form is just a smooth function $f : \mathbb{R}^{N} \to \mathbb{R}$.
 
 Now we can say what we want the \textbf{exterior derivative} to do to the
 various forms.
 
 \begin{itemize}
-  \item on a zero-form $f$ we have simply the usual derivative, $df$
+  \item on a zero-form $f$ we have the usual derivative, $df$, which is
+    now a one-form that maps a tangent vector to a number
   \item on a one-form $u = f dx$ we have the two-form $du = df \wedge dx$
   \item on a two-form $v = f dx \wedge dy$ we have the three-form $dv = df \wedge dx \wedge
-    dy$.
-  \item on a three-form we have $dw = df \wedge dx \wedge dy \wedge dz$ buuttt
-    we don't want four-forms.
+    dy$
+  \item on a three-form we have $dw = df \wedge dx \wedge dy \wedge dz$ but
+    we don't want four-forms so pretend this never happened
 \end{itemize}
 
 The exterior derivative is linear and satisfies a kind of Leibniz rule:
@@ -327,6 +349,79 @@ non-degeneracy condition:
   dv \wedge v \neq = 0
 \end{equation}
 
+The non-degeneracy condition on the contact form ensures that corresponding
+field of planes will be \textit{non-integrable}, as we rather mysteriously
+desire.
+
+Real quick while I have you, are you wondering if there's a condition on the
+one-form that ensures \textit{integrability}?
+
+There is! The result is called \textbf{Frobenius' theorem} (I think there might
+be a couple of those) and it says that the field of planes is integrable when
+
+\begin{equation}
+  dv \wedge v = 0
+\end{equation}
+
+So people like to say that in fact contact one-forms are \textit{maximally non-integrable}!
+
+Okay, remember $\mathbb{CR}^{2}$? It's the space of contact elements for
+$\mathbb{R}^2$. We claim that it can be represented by the one-form $dy - mdx$.
+
+Let's check the non-degeneracy condition.
+
+\begin{align*}
+  d (dy - mdx) \wedge (dy - mdx) = \\
+  -dm \wedge dx \wedge (dy - mdx) = \\
+  -dm \wedge dx \wedge dy = \\
+  -dx \wedge dy \wedge dm
+\end{align*}
+
+Which is the \textit{volume} form for $\mathbb{CR}^{2}$ and is non-zero.
+
+We can also try to understand what the kernel of $w = dy - mdx$ looks like by seeing
+how the form acts on a vector $x = a\frac{\partial}{\partial x} +
+b\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}$ when they pair to 0.
+
+\begin{align*}
+  w (x) = \\
+  (dy - mdx) (a\frac{\partial}{\partial x} +
+  b\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}) = \\
+  (dy)(a\frac{\partial}{\partial x} +
+b\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}) - (mdx)(a\frac{\partial}{\partial x} +
+b\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}) = \\
+  b - ma = 0
+\end{align*}
+
+It's interesting to note that this says our slope $m$ is the ratio of the $y$
+and $x$ components of our vector field.
+
+Substituting $b = ma$ into our equation for $x$ we can find a basis for the
+kernel of $w$.
+
+\begin{align*}
+  a\frac{\partial}{\partial x} +
+    b\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}) = \\
+  a\frac{\partial}{\partial x} +
+    ma\frac{\partial}{\partial y} + c\frac{\partial}{\partial z}) = \\
+  a(\frac{\partial}{\partial x} +
+    m\frac{\partial}{\partial y}) + c\frac{\partial}{\partial z}) 
+\end{align*}
+
+So $\ker(w) = span(\frac{\partial}{\partial x} +
+    m\frac{\partial}{\partial y}, \frac{\partial}{\partial z})$ which will be a
+two-dimensional subspace of the three-dimensional $\mathbb{CR}^{2}$ as we would hope!
+
+MASSIVE TODO:
+
+Oh, this is making me think I haven't been clear at all about what the
+differential form is acting on! It is acting on elements of the contact space I
+should make that clear because I \textit{think} it is correct!
+  
+
+
+
+  
 The standard contact form for $\mathbb{R}^{3}$ is $xdy + dz$. We can check this
 is a contact form:
 
@@ -354,15 +449,17 @@ But just because two contact forms have the same kernel \textit{doesn't} mean
 they have the same Reeb field, our next and findal topic!
 
 \section {Reeb field}
-  
-Examples of Reeb fields:
 
-* talk about flows a bit
-* talk about what characterizes the Reeb field / flow
-* re: Huygens, talk about how the Reeb flow is maybe light rays? And there's
-some relationship to geodesic flow
-* talk about how contact forms that generate the same plane fields may *not*
-generate the same Reeb fields (I think)
+A Reeb field $R$ for a contact one-form $w$ is a vector field that satisfies the following constraints:
+
+\begin{gather*}
+  R \in \ker(dw) \\
+  w(R) = 1
+\end{gather*}
+  
+If we move (flow) our contact elements along a Reeb field then we get another
+non-integrable set of contact elements. Somewhat akin to parallel transporting a
+vector along a parallel vector field?
 
 \begin{thebibliography}{9}
 
