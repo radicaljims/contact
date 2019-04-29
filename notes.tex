@@ -1,6 +1,11 @@
 \documentclass{article}
 
-\usepackage{listings, amssymb, amsmath, tikz-cd, setspace, epigraph}
+\usepackage{listings, amssymb, amsmath, tikz-cd, setspace, epigraph, amsthm}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \usepackage{hyperref}
 
@@ -469,6 +474,82 @@ A Reeb field $R$ for a contact one-form $w$ is the unique vector field that sati
 If we move (flow) our contact elements along a Reeb field then we get another
 non-integrable set of contact elements. Somewhat akin to parallel transporting a
 vector along a parallel vector field?
+
+\section {Theorems and Definitions}
+
+Here we list some precise theorems and definitions. See \cite{mcinerney} for additional details.
+
+\theoremstyle{definition}
+\begin{definition} A \textit{contact element} in $\mathbb{R}^{2}$ is a pair $(P,
+  l)$ consisting of a point $P \in \mathbb{R}^{2}$ and a nonvertical line $l
+  \subset \mathbb{R}^{2}$ such that $P \in l$. The set of all contact elements
+  in $\mathbb{R}^{2}$ is denoted $C\mathbb{R}^{2}$.
+\end{definition}
+
+There is a standard system of coordinates for $C\mathbb{R}^{2}$: $\{(x, y, m) |
+  x, y, m \in \mathbb{R}^{2}\}$. Note that $C\mathbb{R}^{2}$ is isomorphic to $\mathbb{R}^{3}$.
+
+\begin{definition} A \textit{contact form} on $\mathbb{R}^{3}$ is a one-form
+  $\alpha$ on $\mathbb{R}^{3}$ that is non-degenerate: for all $p \in
+  \mathbb{R}^{3}$, $\alpha_{p} \wedge d\alpha_{p} \neq 0$. The \textit{contact
+    distribution} $E_{\alpha}$ associated to $\alpha$ is the plane field defined
+  by $E_{\alpha} = \ker \alpha$.
+\end{definition}
+
+The standard contact form on $\mathbb{R}^{3}$ is $\alpha_{0} = xdy + dz$ which is
+non-degenerate since $\alpha_{0} \wedge d\alpha_{0} = dx \wedge dy \wedge dz$.
+
+The following is a theorem of \textbf{Frobenius}.
+
+\begin{theorem} 
+Let $E$ be a $k$-dimensional distribution in $\mathbb{R}^{n}$ with the property
+that for all $p \in \mathbb{R}^{n}$ and $X_{p}, Y_{p} \in E_{p}$, we have
+$[X_{o}, Y_{p}] \in E_{p}$ (closure under Lie brackets). Then $E$ is locally
+integrable in the following sense: for each $p \in \mathbb{R}^{n}$, there exists
+a domain $U_{p} \subset \mathbb{R}^{k}$ and a smooth regular parametrization
+$\phi : U_{p} \to \mathbb{R}^{n}$ such that $p \in S = \phi(U_{p})$ and such
+that for all $q \in S, E_{q} = T_{q}S$. Moreover, there exist a domain $V_{p}
+\subset \mathbb{R}^{n}$ containing $p$ and a smooth function $F : V_{p} \to
+\mathbb{R}^{n - k}$ such that $S \cap V_{p} = F^{-1}(0)$.
+
+Conversely, if $E$ is integrable then for all $p \in R^{n}$ and all vector
+fields $X, Y$ such that $X_{p}, Y_{p} \in E_{p}$ for all $p \in \mathbb{R}^{n}$,
+$[X_{p}, Y_{p}] \in E_{p}$.
+\end{theorem}
+
+\begin{theorem} Let $E$ be a plane field in $\mathbb{R}^{3}$ defined as the
+  kernel of a one-form $\alpha$ so that $E = \ker \alpha$. Then $E$ is
+  integrable if and only if $\alpha \wedge d\alpha = 0$.
+\end{theorem}
+
+\begin{theorem} Let $\alpha$ be a contact form on $\mathbb{R}^{3}$. There is a
+  unique vector field $\chi$ with the properties that
+  \begin{itemize}
+    \item $\alpha(\chi) = 1$
+    \item $i(\chi)d\alpha = 0$
+  \end{itemize}
+
+  where $i$ is the interior product. The vector field $\chi$ is called the \textit{Reeb field} of $\alpha$.
+\end{theorem}
+
+\begin{theorem} Let $\alpha$ be a contact form on $\mathbb{R}^{3}$ with
+  corresponding Reeb field $\chi$ and contact distribution $E$. Then every
+  smooth vector field $X$ on $\mathbb{R}^{3}$ can be written uniquely as
+  \begin{equation*}
+    X = f(\chi) + H(X)
+  \end{equation*}
+  where $f : \mathbb{R}^{3} \to \mathbb{R}$ is a smooth function and $H(X)$ is a
+  smooth vector field such that for all $p \in \mathbb{R}^{3}, H_{p}(X) \in E_{p}$.
+\end{theorem}
+
+Here is \textbf{Darboux's theorem for contact geometry}. 
+
+\begin{theorem} Let $(\mathbb{R}^{3}, \alpha)$ be a contact space and let
+  $\alpha_{0} = xdy + dz$ be the stanard contact from on $\mathbb{R}^{3}$. For
+  all $p \in \mathbb{R}^{3}$ there are a domain $U$ containing $p$ and a
+  diffeomorphism $\phi : U \to \phi(U) \subset \mathbb{R}^{3}$ such that
+  $\phi(p) = p$ and such that $\phi^{*}\alpha = \alpha_{0}$ on $U$.
+\end{theorem}
 
 \newpage
 
